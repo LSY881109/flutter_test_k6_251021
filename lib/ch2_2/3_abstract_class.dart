@@ -1,4 +1,5 @@
 // ❶ abstract 키워드를 사용해 추상 클래스 지정
+// 주의, 직접적인 인스턴스화를 할수 없다. 설계 클래스 형태이다.
 abstract class Idol {
   final String name;
   final int membersCount;
@@ -29,8 +30,8 @@ class GirlGroup implements Idol {
 }
 
 void main() {
-  GirlGroup redVelvet = GirlGroup('블랙핑크', 4);
+  GirlGroup blackpink = GirlGroup('블랙핑크', 4);
 
-  redVelvet.sayName();
-  redVelvet.sayMembersCount();
+  blackpink.sayName();
+  blackpink.sayMembersCount();
 }
