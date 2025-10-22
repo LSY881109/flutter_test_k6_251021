@@ -15,9 +15,9 @@
 - UI(User Interace)를 제작하는데 최적화
 - 완전한 비동기 언어
 - 이벤트 기반
-- 이솔레이트ISolate를 이용한 동시성 기능
+- 아이솔레이트ISolate를 이용한 동시성 기능
 
-이솔레이트란?
+아이솔레이트란?
 독립적인 메모리 공간과 이벤트 루프를 가진 실행 단위
 
 왜 사용하죠?
@@ -142,7 +142,14 @@ name = 1;
 변경할 수 없습니다.
 
 차이점:
-final은 런타임, const는 빌드 타임 
+final은 런타임, const는 빌드 타임
+사용법?
+평소에, const로 주로 사용하는데(속도가 빠름, 화면에서 많이 사용함.
+속도의 비결중 하나임.),
+만약, 빌드 타임에서 안되는 경우는 final로 사용한다.
+final - 네트워크 통신으로 데이터를 받아와서, 최초로 값을 할당한 후,
+변경이 없는 경우.
+
 
 예시)
 DateTime.now() 함수: 
@@ -157,7 +164,7 @@ print (now);
 //const
 void main() {
 // 에러
-const DateTime now = DateTime. now();
+const DateTime now = DateTime.now();
 print (now);
 }
 
@@ -356,6 +363,20 @@ null 관련 연산자
 
 예시)
 void main() {
+
+  // 타입 뒤에 ?를 명시해서 null 값을 가질 수 있습니다.
+  double? number1 = 1;
+
+  // 타입 뒤에 ?를 명시하지 않아 에러가 납니다.
+  double number2 = null;
+
+  if (number2 != null) { // 기존에는 널 체크를 문장,
+    // 작업
+  }
+
+  print(number1);
+  print(number2);
+
 // 타입 뒤에 ?를 명시해서 null 값을 가질 수 있습니다.
 double? number1 = 1;
 
@@ -368,11 +389,12 @@ null을 가질 수 있는 변수에 새로운 값을 추가할 때 ??를 사용�
 
 기존에 null인 때만 값이 저장되도록 할 수도 있습니다.
 
+# ?? : 병합 연산자
 void main() {
 double? number; // 자동으로 null값 지정 
 print (number ); // null
 
-number ??=3; // ??를 사용하면 기존 값이 nul1일 때만 저장됩니다.
+number ??=3; // ??를 사용하면 기존 값이 null일 때만 저장됩니다.
 print (number); // 3
 
 number ??= 4; // null이 아니므로 30 유지됩니다.
@@ -566,7 +588,7 @@ return a + b;
 void main() {
 print (addTwoNumbers (1, 2));
 }
-
+------------------------------------------------
 28
 순서가 고정된 매개변수 
 positional parameter(포지셔널 파라미터, 
@@ -700,7 +722,7 @@ final allMembers = numbers.reduce(
 print(allMembers);
 }
 출력값은 둘 다 15입니다.
-
+=================================================================================
 31
 typedef 와 함수
 typedef 키워드는 함수의 시그니처를 정의
