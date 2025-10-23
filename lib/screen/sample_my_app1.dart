@@ -46,94 +46,211 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          body : SizedBox(
-              width: double.infinity,
-              child: Column ( // Flex 세로방향으로 나란히 배치 비슷
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('오늘 점심 뭐 먹지'),
-                  Text(
-                    // "헬로우 busanit 501, 플러터 앱 화면 작업 시작."
-                    // 작성하고 싶은 글
-                      ' 헬로우 busanit 501, 오늘점심뭐 먹지', // 글자에 스타일 적용
-                      style: TextStyle(
+          body : ListView(
+            children: [
+                Column ( // Flex 세로방향으로 나란히 배치 비슷
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('오늘 점심 뭐 먹지'),
+                      Text(
+                        // "헬로우 busanit 501, 플러터 앱 화면 작업 시작."
+                        // 작성하고 싶은 글
+                          ' 헬로우 busanit 501, 오늘점심뭐 먹지', // 글자에 스타일 적용
+                          style: TextStyle(
 // 글자 크기
-                        fontSize: 16.0,
+                            fontSize: 16.0,
 // 글자 굵기
-                        fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w700,
 // 글자 색상
-                        color: Colors.blue,
-                      )
-                  ),
-                  Text('오늘 점심 뭐 먹지? 라면+밥'),
-                  TextButton(
-                    // 클릭 시 실행할 함수
-                    onPressed: () {},
-                    // 스타일 지정
-                    style: TextButton.styleFrom(
-                      // 주색상 지정
-                      foregroundColor: Colors.red,
-                    ),
-                    // 버튼에 넣을 위젯
-                    child: Text('텍스트 버튼'),
-                  ),
-                  OutlinedButton(
-                    // 클릭 시 실행할 함수
-                    onPressed: () {},
-                    // 버튼 스타일 지정
-                    style: OutlinedButton.styleFrom(
-                      foregroundColor: Colors.red,
-                    ),
-                    // 버튼에 넣을 위젯
-                    child: Text('아웃라인드 버튼'),
-                  ),
+                            color: Colors.blue,
+                          )
+                      ),
+                      Text('오늘 점심 뭐 먹지? 라면+밥'),
+                      TextButton(
+                        // 클릭 시 실행할 함수
+                        onPressed: () {},
+                        // 스타일 지정
+                        style: TextButton.styleFrom(
+                          // 주색상 지정
+                          foregroundColor: Colors.red,
+                        ),
+                        // 버튼에 넣을 위젯
+                        child: Text('텍스트 버튼'),
+                      ),
+                      OutlinedButton(
+                        // 클릭 시 실행할 함수
+                        onPressed: () {},
+                        // 버튼 스타일 지정
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: Colors.red,
+                        ),
+                        // 버튼에 넣을 위젯
+                        child: Text('아웃라인드 버튼'),
+                      ),
 
 // ElevatedButton 예제
-                  ElevatedButton(
-                    // 클릭 시 실행할 함수
-                    onPressed: () {},
-                    // 버튼 스타일 지정
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
-                    ),
-                    // 버튼에 넣을 위젯
-                    child: Text('엘리베이티드 버튼'),
-                  ),
-                  Center(
-                    child: Builder(
-                      builder: (context) => TextButton(
-                        onPressed: () {
-                          // 방법1
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('스낵바가 표시되었습니다!')),
-                          );
-                          // 방법2
-                          // _showSnackBar(context);
-                        },
-                        child: const Text('스낵바 보기 방법1'),
-                      ),
-                    ),
-                  ),
-                  Center(
-                    child: Builder(
-                      builder: (context) =>   ElevatedButton(
+                      ElevatedButton(
                         // 클릭 시 실행할 함수
-                        onPressed: () {
-                          // 방법2
-                          _showSnackBar(context);
-                        },
+                        onPressed: () {},
                         // 버튼 스타일 지정
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.red,
                         ),
                         // 버튼에 넣을 위젯
-                        child: const Text('스낵바 보기 방법2'),
+                        child: Text('엘리베이티드 버튼'),
                       ),
+                      Center(
+                        child: Builder(
+                          builder: (context) => TextButton(
+                            onPressed: () {
+                              // 방법1
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('스낵바가 표시되었습니다!')),
+                              );
+                              // 방법2
+                              // _showSnackBar(context);
+                            },
+                            child: const Text('스낵바 보기 방법1'),
+                          ),
+                        ),
+                      ),
+                      Center(
+                        child: Builder(
+                          builder: (context) =>   ElevatedButton(
+                            // 클릭 시 실행할 함수
+                            onPressed: () {
+                              // 방법2
+                              _showSnackBar(context);
+                            },
+                            // 버튼 스타일 지정
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.red,
+                            ),
+                            // 버튼에 넣을 위젯
+                            child: const Text('스낵바 보기 방법2'),
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                          onPressed: () {
+                            print("아이콘 버튼 클릭 이벤트 확인");
+                          },
+                          icon: Icon(
+// ① 플러터에서 기본으로 제공하는 아이콘입니다.
+// 제공되는 아이콘 목록은 다음 링크에서 확인해볼 수 있습니다.
+// https://fonts.google.com/icons
+                              Icons.home)),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                              Icons.favorite)),
+                      GestureDetector(
+                        // 한 번 탭했을 때 실행할 함수
+                        onTap: () {
+                          // 출력 결과는 안드로이드 스튜디오의 [Run] 탭에서 확인 가능합니다.
+                          print('on tap');
+                        },
+                        // 두 번 탭했을 때 실행할 함수
+                        onDoubleTap: () {
+                          print('on double tap');
+                        },
+                        // 길게 눌렀을 때 실행할 함수
+                        onLongPress: () {
+                          print('on long press');
+                        },
+                        onPanStart: (DragStartDetails details) {
+                          print('#################onPanStart : ${details.globalPosition}');
+                        },
+                        onPanUpdate: (DragUpdateDetails details){
+                          print('============================onPanUpdate : ${details.delta}');
+                        },
+                        // 제스처를 적용할 위젯
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                          ),
+                          width: 100.0,
+                          height: 100.0,
+                        ),
+                      ),
+                      Container(
+                        // 스타일 적용
+                        decoration: BoxDecoration(
+                          // 배경색 적용
+                          color: Colors.red,
+                          // 테두리 적용
+                          border: Border.all(
+                            // 테두리 굵기
+                            width: 10.0,
+                            // 테두리 색상
+                            color: Colors.black,
+                          ),
+                          // 모서리 둥글게 만들기
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                        // 높이
+                        height: 100.0,
+                        // 너비
+                        width: 100.0,
+                      ),
+                      Container(
+                        color: Colors.blue,
+                        child: Padding(
+                          // 상하, 좌우로 모두 16픽셀만큼 패딩 적용
+                          padding: EdgeInsets.all(16.0),
+                          child: Container(
+                            color: Colors.red,
+                            width: 50.0,
+                            height: 50.0,
+                          ),
+                        ),
+                      ),
+
+                    ],
+                  ),
+              Container(
+                color: Colors.blue,
+                child: Padding(
+                  // 상하, 좌우로 모두 16픽셀만큼 패딩 적용
+                  padding: EdgeInsets.all(16.0),
+                  child: Container(
+                    color: Colors.red,
+                    width: 50.0,
+                    height: 50.0,
+                  ),
+                ),
+              ),
+              Wrap(
+                alignment: WrapAlignment.center,
+                children:[
+                  Container(
+                  color: Colors.blue,
+                  child: Padding(
+                    // 상하, 좌우로 모두 16픽셀만큼 패딩 적용
+                    padding: EdgeInsets.all(16.0),
+                    child: Container(
+                      color: Colors.red,
+                      width: 50.0,
+                      height: 50.0,
                     ),
                   ),
-                ],
-              )
-          )
+                ),
+        ]
+              ),
+            ],
+          ),
+
+
+          floatingActionButton: FloatingActionButton(
+          onPressed: () {
+      // 버튼 클릭 시 실행할 코드
+    },
+      child: Icon(Icons.add), // 버튼 내부 아이콘
+      backgroundColor: Colors.blue, // 배경색
+      tooltip: '추가', // 툴팁 텍스트 (길게 누를 때 표시)
+      elevation: 20.0, // 그림자 깊이
+    ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       ),
     );
   }
