@@ -4,10 +4,10 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        body : SizedBox(
+        body : SizedBox( // 크기가 정해진 상자, 1) 빈공간 만들기 2) 자식 위젯의 크기 강제할 때
           width: double.infinity,
-          child: Column ( // Flex 세로방향으로 나란히 배치 비슷
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Column ( // Flex 세로방향으로 나란히 여러개 배치 가능. 비슷
+            mainAxisAlignment: MainAxisAlignment.center, // 세로 방향 주축.
             children: [
               Text('오늘 점심 뭐 먹지'),
               Text(
