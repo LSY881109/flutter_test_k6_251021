@@ -15,6 +15,23 @@ class MySplash extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.amberAccent
           ),
+          // 간단 구성 1) 문자열 2) 이미지 구성.
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.w800
+                ),
+                '나의 첫 Splash 화면'
+              ),
+              Image.asset('assets/images/logo.jpg',width: 400,),
+              // 공간 여백 잡는 위젯을 사용.
+              SizedBox(height: 16,),
+              CircularProgressIndicator()
+            ],
+          ),
         ),
       ),
     );
