@@ -1,3 +1,4 @@
+import 'package:busanit501_flutter_workspace_251021/screen/my_splash2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ class MyAppRouting extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const MyMainScreen(),
+      home: const MySplash2(),
       //라우팅 준비물 1,
       routes: {
         '/main': (context) => const MyMainScreen(),

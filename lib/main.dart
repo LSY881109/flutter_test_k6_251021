@@ -9,6 +9,6 @@ void main() {
   // runApp( MySplash() ); // runApp
   // runApp( MyLoginScreen() ); // runApp
   // runApp( MyMainScreen() ); // runApp
-  // runApp( MyAppRouting() ); // runApp
-  runApp( MySplash2() ); // runApp
+  runApp( MyAppRouting() ); // runApp
+  // runApp( MySplash2() ); // runApp
 } // main()

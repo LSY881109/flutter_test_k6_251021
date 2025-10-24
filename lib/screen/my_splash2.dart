@@ -18,7 +18,9 @@ class _MySplash2State extends State<MySplash2> {
     super.initState();
     // 3초 뒤, 메인 이동
     Future.delayed(const Duration(seconds: 3),
-            () => Navigator.pushReplacementNamed(context, '/main'));
+            (){
+      Navigator.pushReplacementNamed(context, '/main');
+    });
   }
 
   @override
