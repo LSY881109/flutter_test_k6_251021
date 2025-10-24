@@ -6,8 +6,7 @@ class MyLoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text('로그인 화면'),
         ),
@@ -30,7 +29,7 @@ class MyLoginScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
+
   }
 }

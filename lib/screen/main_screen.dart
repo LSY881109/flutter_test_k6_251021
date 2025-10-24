@@ -6,8 +6,7 @@ class MyMainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(title: const Text('메인화면'),),
         body: SafeArea(
             child: Column(
@@ -17,10 +16,15 @@ class MyMainScreen extends StatelessWidget {
                 const SizedBox(height: 16,),
                 ElevatedButton(
                     onPressed: () => Navigator.pushNamed(context, '/login'),
-                    child: const Text('로그인'))
+                    child: const Text('로그인')),
+                ElevatedButton(
+                  //라우팅 2번 째 준비물,
+                  onPressed: () => Navigator.pushNamed(context, '/signup'),
+                  child: const Text('회원 가입'),
+                ),
               ],
             )),
-      ),
-    );
+      );
+
   }
 }
