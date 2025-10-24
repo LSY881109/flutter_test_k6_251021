@@ -16,7 +16,7 @@ class MyMainScreen extends StatelessWidget {
                 const Center(child: FlutterLogo(size:100),),
                 const SizedBox(height: 16,),
                 ElevatedButton(
-                    onPressed: () {  },
+                    onPressed: () => Navigator.pushNamed(context, '/login'),
                     child: const Text('로그인'))
               ],
             )),
