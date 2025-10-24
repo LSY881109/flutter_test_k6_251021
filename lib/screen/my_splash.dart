@@ -32,7 +32,11 @@ class MySplash extends StatelessWidget {
                   Image.asset('assets/images/logo.jpg',width: 400,),
                   // 공간 여백 잡는 위젯을 사용.
                   SizedBox(height: 16,),
-                  CircularProgressIndicator()
+                  CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation(
+                      Colors.white
+                    ),
+                  )
                 ],
               ),
             ],
