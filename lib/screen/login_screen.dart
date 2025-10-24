@@ -11,6 +11,19 @@ class MyLoginScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('로그인 화면'),
         ),
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                const Center(child: FlutterLogo(size:100),),
+                const SizedBox(height: 16,),
+                const TextField(decoration: InputDecoration(labelText: '이메일')),
+
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
