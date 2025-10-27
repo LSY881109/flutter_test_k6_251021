@@ -1,4 +1,5 @@
 import 'package:busanit501_flutter_workspace_251021/screen/my_splash2.dart';
+import 'package:busanit501_flutter_workspace_251021/screen/pd_data/food_screen.dart';
 import 'package:busanit501_flutter_workspace_251021/screen/signup_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,8 @@ class MyAppRouting extends StatelessWidget {
         '/main': (context) => const MyMainScreen(),
         '/signup': (context) => const MySignUpScreen(),
         '/login': (context) => const MyLoginScreen(),
+        // 공공데이터 받아 오는 화면으로 라우팅 추가.
+        '/pdtest': (context) => const MyPdTestScreen(),
       },
     );
   }
