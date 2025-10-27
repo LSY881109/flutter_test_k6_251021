@@ -14,6 +14,7 @@ class MyAppRouting extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // 시작 화면, 스플레시 화면으로 시작. 3초뒤에 메인으로 이동함.
       home: const MySplash2(),
       //라우팅 준비물 1,
       routes: {

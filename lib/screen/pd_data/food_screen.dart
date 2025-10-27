@@ -14,7 +14,7 @@ class MyPdTestScreen extends StatelessWidget {
       create: (_) => FoodController()..fetchFoodData(),
       child: Scaffold(
         appBar: AppBar(title: const Text('부산 맛집 정보 서비스')),
-        body: Consumer<FoodController>(
+        body: Consumer<FoodController>( // 컨트롤러로 부터 전달 받은 데이터를 , 화면에 반영하기.
           builder: (context, controller, _) {
             if (controller.isLoading) {
               return const Center(child: CircularProgressIndicator());
@@ -23,9 +23,9 @@ class MyPdTestScreen extends StatelessWidget {
               return const Center(child: Text('데이터가 없습니다.'));
             }
             return ListView.builder(
-              itemCount: controller.items.length,
-              itemBuilder: (context, index) {
-                final item = controller.items[index];
+              itemCount: controller.items.length, // 전달 받은 데이터의 총 갯수
+              itemBuilder: (context, index) { // 전달 받은 데이터를 화면에 반영하기.
+                final item = controller.items[index]; //
                 return Card(
                   margin: const EdgeInsets.all(10),
                   child: ListTile(
