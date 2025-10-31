@@ -51,7 +51,7 @@ class LoginController extends ChangeNotifier {
 
         String accessToken = responseData["accessToken"];
         String refreshToken = responseData["refreshToken"];
-        String profileImg = responseData["profileImg"];
+        String profileImg = responseData["profileImg"] ?? "";
 
         // JWT 토큰 보안 저장소에 저장
         await secureStorage.write(key: "accessToken", value: accessToken);
